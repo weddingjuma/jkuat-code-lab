@@ -28,6 +28,11 @@ the option to use the gradle wrapper
 * You may also be prompted to change to the appropriate SDK folder for your local machine
 * Once the project has compiled -> run the project!
 
+## Google Play Services Setup.
+This project uses Firebase. You will need to generate the configuration file (`google-services.json`) and copy it to your `/app` dir. See links below
+
+1. [Setup Firebase setup](https://firebase.google.com/docs/android/setup)
+
 
 License
 -------
