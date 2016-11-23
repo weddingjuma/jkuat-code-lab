@@ -3,8 +3,14 @@ Android Codelab
 This folder contains the source code for the Android testing codelab. It gives an introduction into:
 
 1. Firebase
-2. Databases
-3. UI/UX
+2. Retrofit Integration Tests
+
+
+## Branches
+The following project contains two branches each demonstrating different functionalities.
+
+1. [FireBase:](https://github.com/kioko/jkuat-code-lab/tree/feature/feature-firebase-setup) Demonstrates how to use Firebase for Authentication.
+2. [Retrofit:](https://github.com/kioko/jkuat-code-lab/tree/feature/feature-api-integration) Demonstrates how to write Integration tests for API enpoints.
 
 
 ## Requirements
