@@ -1,47 +1,74 @@
-Android Codelab
--------------------
-This folder contains the source code for the Android testing codelab. It gives an introduction into:
+Retrofit Test 
+--------------------
 
-1. Firebase
-2. Databases
-3. UI/UX
+This is a project demonstrates how to write unit test for your endpoint. For this demo, we will use 
+[TMDB API](https://www.themoviedb.org/account/signup)  to fetch data.
 
-
-## Requirements
-* JDK Version 1.7 & above
-* [Android SDK.](http://developer.android.com/sdk/index.html)
-* Android SDK Tools
-* Android SDK Build tools 24.0.3
-* Android Support Repository
-* Android Support library
+## Description
 
 
-## Project Setup
+This project uses the Gradle build system and the Android gradle plugin support for unit testing.
+You can either benefit from IDEs integration such as Android studio or run the tests on the command
+line.
+Unit tests run on a local JVM on your development machine. The Android Gradle plugin will compile your app's source code and execute it using gradle test task. 
 
-This project is built with Gradle, the [Android Gradle plugin](http://tools.android.com/tech-docs/new-build-system/user-guide) Clone this repository inside your working folder. Import the `settings.gradle` file in the root folder into e.g. Android Studio. (You can also have a look at the `build.gradle` files on how the projects depend on another.)
+For more information see [Android's Documentation](http://tools.android.com/tech-docs/unit-testing-support)
 
-* Clone the project.
-* Start Android Studio.
-* Select "Open Project" and select the generated root Project folder
-* You may be prompted with "Unlinked gradle project" -> Select "Import gradle project" and select 
-the option to use the gradle wrapper
-* You may also be prompted to change to the appropriate SDK folder for your local machine
-* Once the project has compiled -> run the project!
+## Setup the project in Android studio and run tests.
 
+1. Download the project code, preferably using `git clone`.
+2. In Android Studio, select *File* | *Open...* and point to the `./build.gradle` file.
+3. Make sure you select "Unit Tests" as the test artifact in the "Build Variants" panel in Android Studio. 
+4. Check out the relevant code:
+    * Unit Tests are in `src/test/java`
+5. Create a test configuration with the JUnit4 runner: `org.junit.runners.JUnit4`
+    * Open *Run* menu | *Edit Configurations*
+    * Add a new *JUnit* configuration
+    * Choose module *app*
+    * Select the class to run by using the *...* button
+6. Run the newly created configuration
 
-License
--------
+The unit test will be ran automatically.
 
-    Copyright 2016 Thomas Kioko
+## Use Gradle on the command line.
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+After downloading the projects code using `git clone` you'll be able to run the
+unit tests using the command line:
 
-       http://www.apache.org/licenses/LICENSE-2.0
+    ./gradlew test
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
+If all the unit tests have been successful you will get a `BUILD SUCCESSFUL`
+message.
+
+## See the report.
+
+A report in HTML format is generated in `app/build/reports/tests`
+
+###TMDB API Key Setup
+For the app to make requests, you require a TMDB API key. 
+
+If you don’t already have an account, you will need to [create one](https://www.themoviedb.org/account/signup) 
+in order to request an API Key.
+
+Once you have it, open `gradle.properties` file and paste your API key in `TMDB_API_KEY` variable.
+
+## Libraries Used
+ 1. [Retrofit](http://square.github.io/retrofit/)
+ 2. [OkHTTP](http://square.github.io/okhttp/)
+ 
+
+```
+
+Copyright 2016 Thomas Kioko (code_wizard)
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
