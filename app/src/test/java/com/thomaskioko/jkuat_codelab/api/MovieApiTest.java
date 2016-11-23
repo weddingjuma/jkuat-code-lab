@@ -31,34 +31,4 @@ public class MovieApiTest extends BaseTestCase {
         assertEquals(true, movieResponse.isSuccessful());
 
     }
-
-    @Test
-    public void getPopularMovies() throws IOException {
-
-        Call<Movie> popularMovies = getTmdbApiClient().movieInterface().getPopularMovies();
-        Response<Movie> movieResponse = popularMovies.execute();
-
-        assertEquals(movieResponse.code(), 200);
-        assertEquals(true, movieResponse.isSuccessful());
-    }
-
-    @Test
-    public void getMovieReviews() throws IOException {
-
-        Call<Reviews> popularMovies = getTmdbApiClient().movieInterface().getMovieReviews(TestData.MOVIE_ID);
-        Response<Reviews> reviewsResponse = popularMovies.execute();
-
-        assertEquals(reviewsResponse.code(), 200);
-        assertEquals(true, reviewsResponse.isSuccessful());
-    }
-
-    @Test
-    public void getPopularVideos() throws IOException {
-
-        Call<Videos> popularMovies = getTmdbApiClient().movieInterface().getMovieVideos(TestData.MOVIE_ID);
-        Response<Videos> videosResponse = popularMovies.execute();
-
-        assertEquals(videosResponse.code(), 200);
-        assertEquals(true, videosResponse.isSuccessful());
-    }
 }
