@@ -1,8 +1,8 @@
 package com.thomaskioko.jkuat_codelab.api;
 
 
-import com.thomaskioko.retrofittests.api.interfaces.MovieInterface;
-import com.thomaskioko.retrofittests.util.ApplicationConstants;
+import com.thomaskioko.jkuat_codelab.api.interfaces.MovieInterface;
+import com.thomaskioko.jkuat_codelab.util.ApplicationConstants;
 
 import java.util.concurrent.TimeUnit;
 

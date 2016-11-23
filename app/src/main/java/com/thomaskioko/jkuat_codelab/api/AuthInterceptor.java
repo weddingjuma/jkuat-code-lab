@@ -1,7 +1,7 @@
 package com.thomaskioko.jkuat_codelab.api;
 
 
-import com.thomaskioko.retrofittests.BuildConfig;
+import com.thomaskioko.jkuat_codelab.BuildConfig;
 
 import java.io.IOException;
 

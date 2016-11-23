@@ -1,9 +1,9 @@
 package com.thomaskioko.jkuat_codelab.api;
 
 
-import com.thomaskioko.retrofittests.api.model.Movie;
-import com.thomaskioko.retrofittests.api.model.Reviews;
-import com.thomaskioko.retrofittests.api.model.Videos;
+import com.thomaskioko.jkuat_codelab.api.model.Movie;
+import com.thomaskioko.jkuat_codelab.api.model.Reviews;
+import com.thomaskioko.jkuat_codelab.api.model.Videos;
 
 import org.junit.Test;
 

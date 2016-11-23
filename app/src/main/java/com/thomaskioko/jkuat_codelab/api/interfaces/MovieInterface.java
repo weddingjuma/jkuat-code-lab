@@ -1,9 +1,9 @@
 package com.thomaskioko.jkuat_codelab.api.interfaces;
 
 
-import com.thomaskioko.retrofittests.api.model.Movie;
-import com.thomaskioko.retrofittests.api.model.Reviews;
-import com.thomaskioko.retrofittests.api.model.Videos;
+import com.thomaskioko.jkuat_codelab.api.model.Movie;
+import com.thomaskioko.jkuat_codelab.api.model.Reviews;
+import com.thomaskioko.jkuat_codelab.api.model.Videos;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

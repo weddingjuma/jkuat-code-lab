@@ -1,6 +1,7 @@
 package com.thomaskioko.jkuat_codelab.api;
 
-import com.thomaskioko.retrofittests.util.ApplicationConstants;
+
+import com.thomaskioko.jkuat_codelab.util.ApplicationConstants;
 
 import org.junit.BeforeClass;
 
