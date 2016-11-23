@@ -22,7 +22,7 @@ public class StringUtils {
      * @param emailAddress {@link String} E-mail Address
      * @return {@link Boolean} True/False
      */
-    public static boolean validate(String emailAddress) {
+    public static boolean validateEmailAddress(String emailAddress) {
         Matcher matcher = VALID_EMAIL_ADDRESS_REGEX.matcher(emailAddress);
         return matcher.find();
     }
