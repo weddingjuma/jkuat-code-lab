@@ -18,6 +18,10 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.thomaskioko.jkuat_codelab.R;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 /**
  * This activity allows users to login via {@link FirebaseAuth}
  *
@@ -25,10 +29,19 @@ import com.thomaskioko.jkuat_codelab.R;
  */
 public class LoginActivity extends AppCompatActivity {
 
-    private EditText inputEmail, inputPassword;
+    @BindView(R.id.email)
+    EditText inputEmail;
+    @BindView(R.id.password)
+    EditText inputPassword;
+    @BindView(R.id.progressBar)
+    ProgressBar progressBar;
+    @BindView(R.id.btn_signup)
+    Button btnSignup;
+    @BindView(R.id.btn_login)
+    Button btnLogin;
+    @BindView(R.id.btn_reset_password)
+    Button btnReset;
     private FirebaseAuth auth;
-    private ProgressBar progressBar;
-    private Button btnSignup, btnLogin, btnReset;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,36 +58,20 @@ public class LoginActivity extends AppCompatActivity {
         // set the view now
         setContentView(R.layout.activity_login);
 
+        ButterKnife.bind(this);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        inputEmail = (EditText) findViewById(R.id.email);
-        inputPassword = (EditText) findViewById(R.id.password);
-        progressBar = (ProgressBar) findViewById(R.id.progressBar);
-        btnSignup = (Button) findViewById(R.id.btn_signup);
-        btnLogin = (Button) findViewById(R.id.btn_login);
-        btnReset = (Button) findViewById(R.id.btn_reset_password);
 
         //Get Firebase auth instance
         auth = FirebaseAuth.getInstance();
 
-        btnSignup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(LoginActivity.this, SignUpActivity.class));
-            }
-        });
+    }
 
-        btnReset.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(LoginActivity.this, ResetPasswordActivity.class));
-            }
-        });
-
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+    @OnClick({R.id.btn_signup, R.id.btn_login, R.id.btn_reset_password})
+    void onButtonClickListener(View view){
+        switch (view.getId()){
+            case R.id.btn_login:
                 String email = inputEmail.getText().toString();
                 final String password = inputPassword.getText().toString();
 
@@ -114,8 +111,14 @@ public class LoginActivity extends AppCompatActivity {
                                 }
                             }
                         });
-            }
-        });
+                break;
+            case R.id.btn_signup:
+                startActivity(new Intent(LoginActivity.this, SignUpActivity.class));
+                break;
+            case R.id.btn_reset_password:
+                startActivity(new Intent(LoginActivity.this, ResetPasswordActivity.class));
+                break;
+        }
     }
 }
 
